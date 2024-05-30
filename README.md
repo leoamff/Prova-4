@@ -1,2 +1,2 @@
 # Pova 4
-## Sistema de um simulador de concessionária em Python.
+## Construindo um sistema simulador de concessionária em Python.
