@@ -1,50 +1,43 @@
-# Criei uma variavel e atribui ela a funçao input para que o usuario possa digitar o nome do carro
-# OBS: Adicionei a função .upper, pa
-nomeDoCarro = (input("Digite o nome do carro que você deseja comprar: ").upper())
+listaDeCarros = [   #Criando a lista com os nomes de carros
+        "ONIX","CAMARO", "CELTA","KICKS","POLO","JETTA","GOLF","HILUX","S10","UNO","PALIO"
+        ,"VECTRA","CRUZE","VELAR","AMAROK","GOL","CORVETTE","COMPASS","SW4","COROLLA"]   
 
-# Criei uma variavel (float) para que o usuario possa digitar o valor do carro que ele gostaria de conhecer
-valorDoCarro = float(input("Digite o valor do carro que você gostaria de conhecer: "))
+def procurar_carro(carro): #criando a funçao "procurar_carr"o e adiconando o parametro "carro"
+      for carro in listaDeCarros: #Percorrendo a listaDeCarros
+        if nomeDoCarro in (carro): #Criando uma condiçao, se o usuario digitar algum carro que esteja dentro da lista
+            return "Carro encontrado!"     #Irá retornar essa mensagem
 
-# Utilizando a função print para aparecer no terminal o nome e o valor do carro que o usuario esta interessado
-print(f"O usuário gostaria de saber se o carro {nomeDoCarro} está disponível e gostaria de pagar {valorDoCarro} reais nesse carro.")
+def avaliacao_carro(preco): #Criando a funçao "avaliacao_carro" e adicionando o parametro "preco"
+            if valorDoCarro < 10000:   #Criando condiçoes dependendo do vque o usuario inseriu,                                             
+                return "Mal estado."   #irá retornar uma mensagem em especifico
 
-#Criando uma lista com os nomes dos carros disponiveis na concessionaria
-listaDeCarros = [
-    "ONIX","CAMARO", "CELTA","KICKS","POLO","JETTA","GOLF","HILUX","S10","UNO","PALIO"
-    ,"VECTRA","CRUZE","VELAR","AMAROK","GOL","CORVETTE","COMPASS","SW4","COROLLA"]
+            elif valorDoCarro < 30000:
+                return "Conservado."
+
+            elif valorDoCarro < 60000:
+                return "Seminovo."
+
+            else:
+                return("Novo.")
+
+  
+while True:  #Criando um loop para receberr infinitos nomes e valores de carro
+    
+    nomeDoCarro = (input("Digite o nome do carro que você deseja comprar: ").upper()) #Recebendo o nome do carro(convertendo para maiscula)
+    valorDoCarro = float(input("Digite o valor que você gostaria de pagar:")) #Recebendo o valor do carro
+    print(f"O usuário gostaria de saber se o carro {nomeDoCarro} está disponível e gostaria de pagar {valorDoCarro} reais nesse carro.") #printando msg
+
+    resultado_busca = procurar_carro(nomeDoCarro)  #criando uma variavel para chamara funçao procurar_carro e atribuindo o parametro nome do carro
+    print(resultado_busca)  
+
+    if resultado_busca == "Carro encontrado!": #Criando condiçao, que se o carro for encontrado, aprensenta a avaliaçao
+        print(f"O carro {nomeDoCarro} está disponivel, e está avaliado como {avaliacao_carro(valorDoCarro)}")  
 
 
-# Usando a função for para percorrer a lista. Adicionando dentro do for uma função que verifica se
-# o carro que ususario quer tem dentro da lista
-for carro in listaDeCarros:
-    if nomeDoCarro in (carro.upper()):
-        print("Carro encontrado!")
-        if valorDoCarro < 10000:
-            print("Mal estado.")
-
-        elif valorDoCarro < 30000:
-            print("Conservado.")
-
-        elif valorDoCarro < 60000:
-            print("Seminovo.")
-
-        else:
-            print("Novo.")
-            break
-    else:
-        print("Carro não encontrado!")
+    continuar = input("Digite 'sim' para continuar ou qualquer outra coisa para sair: ") #Pergunta se deseja continuar o loop
+    if continuar.lower() != "sim": #Criando condição para encerra o programa
         break
+    
 
-        
+    
 
-# Criando uma função
-def procurar_carro(nome_carro):
-    for carro in listaDeCarros:
-        if nomeDoCarro in (carro.upper()):
-            return nome_carro
-        else:
-            break
-procurandoCarro = procurar_carro() # criando uma variavel para atribuir a funçao
-print(procurandoCarro)
-            
-        
