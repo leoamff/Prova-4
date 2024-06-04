@@ -1,2 +1,2 @@
-# Pova 4
+# Prova 4
 ## Construindo um sistema simulador de concessionária em Python.
