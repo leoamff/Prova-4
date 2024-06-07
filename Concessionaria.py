@@ -1,13 +1,13 @@
 listaDeCarros = [ 
-    "ONIX", "CAMARO", "CELTA", "KICKS", "POLO", "JETTA", "GOLF", "HILUX", "S10", "UNO", "PALIO", "VECTRA", "CRUZE", "VELAR", "AMAROK", "GOL", "CORVETTE", "COMPASS", "SW4", "COROLLA"]
-
+    "ONIX", "CAMARO", "CELTA", "KICKS", "POLO", "JETTA", "GOLF", "HILUX", "S10", 
+    "UNO", "PALIO", "VECTRA", "CRUZE", "VELAR", "AMAROK", "GOL", "CORVETTE", "COMPASS", "SW4", "COROLLA"]
 
 def procurarCarro(carro):  
     for carro in listaDeCarros: 
         if nomeDoCarro in (carro):
             return "Carro encontrado!"
 
-    return "Carro não encontrado"  
+    return "Carro nao encontrado"  
 
 
 def avaliacaoCarro(preco):
@@ -26,13 +26,10 @@ def avaliacaoCarro(preco):
 
 while True: 
 
+    nomeDoCarro = (input("Digite o nome do carro que voce deseja comprar: ").upper())
     
-    nomeDoCarro = (
-        input("Digite o nome do carro que voce deseja comprar: ").upper())
-    
-    valorDoCarro = float(input("Digite o valor que você gostaria de pagar:"))
-    print(f"O usuário gostaria de saber se o carro {nomeDoCarro} está disponível e gostaria de pagar {
-          valorDoCarro} reais nesse carro.")  
+    valorDoCarro = float(input("Digite o valor que voce gostaria de pagar:"))
+    print(f"O usuario gostaria de saber se o carro {nomeDoCarro} esta disponovel e gostaria de pagar {valorDoCarro} reais nesse carro.")  
 
     
     resultadoBusca = procurarCarro(nomeDoCarro)
@@ -40,10 +37,8 @@ while True:
 
     
     if resultadoBusca == "Carro encontrado!":
-        print(f"O carro {nomeDoCarro} está disponivel, e está avaliado como {
-              avaliacaoCarro(valorDoCarro)}")
+        print(f"O carro {nomeDoCarro} esta disponivel, e esta avaliado como {avaliacaoCarro(valorDoCarro)}")
 
-    continuar = input(
-        "Digite 'sim' para continuar ou qualquer outra coisa para sair: ")
+    continuar = input("Digite 'sim' para continuar ou qualquer outra coisa para sair: ")
     if continuar.lower() != "sim": 
         break
