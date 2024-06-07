@@ -65,16 +65,17 @@ while True:
     print(f"O usuário gostaria de saber se o carro {nomeDoCarro} está disponível e gostaria de pagar {valorDoCarro} reais nesse carro.") 
 ```
 
-###     Atribuindo o resultado da busca ao chamar a função procurarCarro com o nomeDoCarro.
+###     Chamando as funções 'procurarCarro' e 'avaliacaoCarro', e passando os parâmetros 'nomeDoCarro' e 'valorDoCarro'.
 ```
         resultadoBusca = procurarCarro(nomeDoCarro)
         print(resultadoBusca)
+        resultadoAvaliacao = avaliacaoCarro(valorDoCarro)
 ```
 
 ###        Se o carro for encontrado, apresenta a avaliação.
 ```
         if resultadoBusca == "Carro encontrado!":
-            print(f"O carro {nomeDoCarro} está disponivel, e está avaliado como {avaliacaoCarro(valorDoCarro)}")
+            print(f"O carro {nomeDoCarro} está disponivel, e está avaliado como {resultadoAvaliacao}")
 ```
 
 ###        Pergunta se deseja continuar o loop, criando condição para encerrar o programa.
