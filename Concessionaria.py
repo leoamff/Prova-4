@@ -34,10 +34,11 @@ while True:
     
     resultadoBusca = procurarCarro(nomeDoCarro)
     print(resultadoBusca)
+    resultadoAvaliacao = avaliacaoCarro(valorDoCarro)
 
     
     if resultadoBusca == "Carro encontrado!":
-        print(f"O carro {nomeDoCarro} esta disponivel, e esta avaliado como {avaliacaoCarro(valorDoCarro)}")
+        print(f"O carro {nomeDoCarro} esta disponivel, e esta avaliado como {resultadoAvaliacao}")
 
     continuar = input("Digite 'sim' para continuar ou qualquer outra coisa para sair: ")
     if continuar.lower() != "sim": 
